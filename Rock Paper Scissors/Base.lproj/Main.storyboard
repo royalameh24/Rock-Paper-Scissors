@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cheese 2-->
+        <!--Game Screen-->
         <scene sceneID="mV6-nC-DpJ">
             <objects>
-                <viewController id="tje-mk-Udh" customClass="ViewController2" customModule="Rock_Paper_Scissors" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tje-mk-Udh" customClass="GameViewController" customModule="Rock_Paper_Scissors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g1V-5a-ssQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,10 +28,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kkk-2X-VK5">
-                                <rect key="frame" x="14" y="278" width="365" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="q36-8B-Jtj">
                                 <rect key="frame" x="16" y="73" width="361" height="128"/>
                                 <subviews>
@@ -46,19 +42,32 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kkk-2X-VK5">
+                                <rect key="frame" x="14" y="276" width="365" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vsk-yF-L7q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XNb-sh-nth" appends="YES" id="3Xl-mY-Olw"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Cheese 2" style="editor" id="4Zw-A3-cO5">
+                    <navigationItem key="navigationItem" title="Game Screen" style="editor" id="4Zw-A3-cO5">
                         <barButtonItem key="backBarButtonItem" title="Back" id="aRD-1d-ZLL"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TB2-Rq-dYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="3" id="XNb-sh-nth">
+                    <connections>
+                        <action selector="tapRecognition:" destination="tje-mk-Udh" id="fZH-Hr-rYE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="976.33587786259534" y="668.30985915492965"/>
         </scene>
-        <!--View Controller-->
+        <!--Title Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Rock_Paper_Scissors" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,7 +88,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" style="editor" id="HgF-cP-nXc">
+                    <navigationItem key="navigationItem" title="Title Screen" largeTitleDisplayMode="always" style="editor" id="HgF-cP-nXc">
                         <barButtonItem key="backBarButtonItem" title="Back" id="XSy-bu-RQf"/>
                     </navigationItem>
                 </viewController>
