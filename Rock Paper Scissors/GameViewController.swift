@@ -6,17 +6,24 @@
 //
 
 import UIKit
+import simd
 
 class GameViewController: UIViewController {
     
     @IBOutlet weak var RockOutlet: UIButton!
     @IBOutlet weak var PaperOutlet: UIButton!
     @IBOutlet weak var ScissorsOutlet: UIButton!
-    
     @IBOutlet weak var RockView: UIImageView!
     @IBOutlet weak var PaperView: UIImageView!
-    
     @IBOutlet weak var ScissorsView: UIImageView!
+    @IBOutlet weak var InformationOutlet: UILabel!
+    @IBOutlet weak var ComputerView: UIImageView!
+    
+    let dictionaryNames = ["Rock" : 1, "Paper" : 2, "Scissors" : 3]
+    let dictionaryNums = [1: "Rock", 2 : "Paper", 3: "Scissors"]
+    let lossDictionary = ["Rock" : "Paper", "Paper" : "Scissors", "Scissors" : "Rock"]
+    var selection = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let radius = 15
@@ -27,12 +34,15 @@ class GameViewController: UIViewController {
         RockView.layer.masksToBounds = true
         RockView.layer.borderWidth = 5
         RockView.layer.borderColor = UIColor.white.cgColor
+        RockView.layer.cornerRadius = CGFloat(radius)
         PaperView.layer.masksToBounds = true
         PaperView.layer.borderWidth = 5
         PaperView.layer.borderColor = UIColor.white.cgColor
+        PaperView.layer.cornerRadius = CGFloat(radius)
         ScissorsView.layer.masksToBounds = true
         ScissorsView.layer.borderWidth = 5
         ScissorsView.layer.borderColor = UIColor.white.cgColor
+        ScissorsView.layer.cornerRadius = CGFloat(radius)
         
     }
     
@@ -66,6 +76,9 @@ class GameViewController: UIViewController {
     
     
     @IBAction func tapOutlet(_ sender: Any) {
-        print("Hello")
+        guard selection == 0 else {
+            InformationOutlet.text = "No selection made, select before entering (triple tap)"
+            return
+        }
     }
 }
