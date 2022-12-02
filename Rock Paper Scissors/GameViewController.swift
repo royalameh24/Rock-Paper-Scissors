@@ -11,18 +11,19 @@ import simd
 class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        winner.count
+        computerPerception.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TableOutlet.dequeueReusableCell(withIdentifier: "resultCell")!
-        cell.textLabel?.text = winner[indexPath.row]
+        cell.textLabel?.text = winner[indexPath.row] + " | " + computerMove[indexPath.row] + " | " + yourMove[indexPath.row] + " | " + computerPerception[indexPath.row]
         return cell
     }
     
-    var winner = ["Play to win!"]
-    var winningMove = ["Beat the computer!"]
-    var computerPerception = ["Use the slider to increase or decrease the comptuer perception"]
+    var winner = ["Winner"]
+    var computerMove = ["Computer move"]
+    var yourMove = ["Your move"]
+    var computerPerception = ["Perception"]
     
     
     
@@ -113,11 +114,21 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         if (rand <= sliderNum) {
             let computerChoice = lossDictionary[dictionaryNums[selection]!]!
             InformationOutlet.text = computerChoice
+            computerMove.append(computerChoice)
+            yourMove.append(dictionaryNums[selection]!)
+            computerPerception.append(String(sliderNum / 10000000) + "%")
+            winner.append("W")
         }
         else {
             let newRand = Int.random(in: 1...3)
             InformationOutlet.text = dictionaryNums[newRand]!
+            computerMove.append(dictionaryNums[newRand]!)
+            yourMove.append(dictionaryNums[selection]!)
+            computerPerception.append(String(sliderNum / 10000000) + "%")
+            winner.append("W")
         }
+        
+        TableOutlet.reloadData()
         
         clearSelection()
     }
