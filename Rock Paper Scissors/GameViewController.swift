@@ -16,14 +16,17 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TableOutlet.dequeueReusableCell(withIdentifier: "resultCell")!
-        cell.textLabel?.text = winner[indexPath.row] + " | " + computerMove[indexPath.row] + " | " + yourMove[indexPath.row] + " | " + computerPerception[indexPath.row]
+        cell.textLabel?.text = winner[indexPath.row] + " | " + yourMove[indexPath.row] + " | " + computerMove[indexPath.row] + " | " + computerPerception[indexPath.row]
         return cell
     }
     
-    var winner = ["Winner"]
-    var computerMove = ["Computer move"]
-    var yourMove = ["Your move"]
-    var computerPerception = ["Perception"]
+    var winner = [String]()
+    var computerMove = [String]()
+    var yourMove = [String]()
+    var computerPerception = [String]()
+    var totalWins = 0
+    var totalCWins = 0
+    var totalTies = 0
     
     
     
@@ -117,7 +120,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             computerMove.append(computerChoice)
             yourMove.append(dictionaryNums[selection]!)
             computerPerception.append(String(sliderNum / 10000000) + "%")
-            winner.append("W")
+            winner.append("L")
         }
         else {
             let newRand = Int.random(in: 1...3)
@@ -125,7 +128,17 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             computerMove.append(dictionaryNums[newRand]!)
             yourMove.append(dictionaryNums[selection]!)
             computerPerception.append(String(sliderNum / 10000000) + "%")
-            winner.append("W")
+            if newRand != selection {
+                if lossDictionary[dictionaryNums[selection]!]! == dictionaryNums[newRand] {
+                    winner.append("L")
+                }
+                else {
+                    winner.append("W")
+                }
+            }
+            else {
+                winner.append("T")
+            }
         }
         
         TableOutlet.reloadData()
