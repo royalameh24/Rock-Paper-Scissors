@@ -116,7 +116,16 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         let sliderNum = Int(SliderOutlet.value * 1000000000)
         if (rand <= sliderNum) {
             let computerChoice = lossDictionary[dictionaryNums[selection]!]!
-            InformationOutlet.text = computerChoice
+            InformationOutlet.text = "Computer wins using \(computerChoice)"
+            if computerChoice == "Rock" {
+                ComputerView.image = UIImage(named: "Rock.jpeg")
+            }
+            else if computerChoice == "Paper" {
+                ComputerView.image = UIImage(named: "paper.jpeg")
+            }
+            else {
+                ComputerView.image = UIImage(named: "Scissors2.jpeg")
+            }
             computerMove.append(computerChoice)
             yourMove.append(dictionaryNums[selection]!)
             computerPerception.append(String(sliderNum / 10000000) + "%")
@@ -124,20 +133,31 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else {
             let newRand = Int.random(in: 1...3)
-            InformationOutlet.text = dictionaryNums[newRand]!
             computerMove.append(dictionaryNums[newRand]!)
             yourMove.append(dictionaryNums[selection]!)
             computerPerception.append(String(sliderNum / 10000000) + "%")
+            if newRand == 1 {
+                ComputerView.image = UIImage(named: "Rock.jpeg")
+            }
+            else if newRand == 2 {
+                ComputerView.image = UIImage(named: "paper.jpeg")
+            }
+            else {
+                ComputerView.image = UIImage(named: "Scissors.jpeg")
+            }
             if newRand != selection {
                 if lossDictionary[dictionaryNums[selection]!]! == dictionaryNums[newRand] {
                     winner.append("L")
+                    InformationOutlet.text = "Computer wins using \(dictionaryNums[newRand]!)"
                 }
                 else {
                     winner.append("W")
+                    InformationOutlet.text = "You win using \(dictionaryNums[selection]!)!"
                 }
             }
             else {
                 winner.append("T")
+                InformationOutlet.text = "Tie: no one wins"
             }
         }
         
