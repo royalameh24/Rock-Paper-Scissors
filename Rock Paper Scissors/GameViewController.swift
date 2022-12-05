@@ -16,7 +16,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TableOutlet.dequeueReusableCell(withIdentifier: "resultCell")!
-        cell.textLabel?.text = winner[indexPath.row] + " | " + yourMove[indexPath.row] + " | " + computerMove[indexPath.row] + " | " + computerPerception[indexPath.row]
+        cell.textLabel?.text = String(indexPath.row + 1) + ": " + winner[indexPath.row] + " | " + yourMove[indexPath.row] + " | " + computerMove[indexPath.row] + " | " + computerPerception[indexPath.row]
         return cell
     }
     
@@ -39,6 +39,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var InformationOutlet: UILabel!
     @IBOutlet weak var ComputerView: UIImageView!
     @IBOutlet weak var SliderOutlet: UISlider!
+    @IBOutlet weak var TotalInfoOutlet: UILabel!
     @IBOutlet weak var TableOutlet: UITableView!
     
     let dictionaryNames = ["Rock" : 1, "Paper" : 2, "Scissors" : 3]
@@ -130,6 +131,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             yourMove.append(dictionaryNums[selection]!)
             computerPerception.append(String(sliderNum / 10000000) + "%")
             winner.append("L")
+            totalCWins += 1
         }
         else {
             let newRand = Int.random(in: 1...3)
@@ -143,26 +145,30 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                 ComputerView.image = UIImage(named: "paper.jpeg")
             }
             else {
-                ComputerView.image = UIImage(named: "Scissors.jpeg")
+                ComputerView.image = UIImage(named: "Scissors2.jpeg")
             }
             if newRand != selection {
                 if lossDictionary[dictionaryNums[selection]!]! == dictionaryNums[newRand] {
                     winner.append("L")
                     InformationOutlet.text = "Computer wins using \(dictionaryNums[newRand]!)"
+                    totalCWins += 1
                 }
                 else {
                     winner.append("W")
                     InformationOutlet.text = "You win using \(dictionaryNums[selection]!)!"
+                    totalWins += 1
                 }
             }
             else {
                 winner.append("T")
                 InformationOutlet.text = "Tie: no one wins"
+                totalTies += 1
             }
         }
+        TotalInfoOutlet.text = "Total wins: \(totalWins) | Total losses: \(totalCWins) | Total ties \(totalTies)\nWin rate: \(Double(Int((Double(totalWins)/Double(totalWins + totalCWins + totalTies)) * 10000))/100.0)%"
+        
         
         TableOutlet.reloadData()
-        
         clearSelection()
     }
     
