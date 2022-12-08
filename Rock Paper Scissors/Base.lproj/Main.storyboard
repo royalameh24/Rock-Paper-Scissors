@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kkk-2X-VK5">
-                                <rect key="frame" x="25" y="306" width="365" height="30"/>
+                                <rect key="frame" x="25" y="296" width="365" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Scissors2" translatesAutoresizingMaskIntoConstraints="NO" id="qps-U0-Ild">
@@ -68,18 +68,18 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u4n-hY-Uw4">
-                                <rect key="frame" x="76" y="343" width="240" height="128"/>
+                                <rect key="frame" x="76" y="333" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer selection: (selected)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1J-II-D9G">
-                                <rect key="frame" x="75" y="493" width="240" height="81"/>
+                                <rect key="frame" x="75" y="469" width="240" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Computer's Choice" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnO-HZ-qZ2">
-                                <rect key="frame" x="76" y="461" width="240" height="81"/>
+                                <rect key="frame" x="76" y="442" width="240" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -102,14 +102,21 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Games total information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOb-RD-EfT">
-                                <rect key="frame" x="0.0" y="595" width="390" height="68"/>
+                                <rect key="frame" x="0.0" y="611" width="390" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Win/loss | Your Move | Computer Move | Awareness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD9-q7-bvH">
-                                <rect key="frame" x="3" y="582" width="387" height="21"/>
+                                <rect key="frame" x="3" y="593" width="387" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone's record: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GM-oP-KNA">
+                                <rect key="frame" x="16" y="516" width="361" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -131,6 +138,7 @@
                         <outlet property="InformationOutlet" destination="v1J-II-D9G" id="zR8-rt-Kq0"/>
                         <outlet property="PaperOutlet" destination="lQU-55-2eQ" id="tuf-Y5-BDX"/>
                         <outlet property="PaperView" destination="a5B-cZ-rzd" id="vaz-eM-xH9"/>
+                        <outlet property="RecordOutlet" destination="3GM-oP-KNA" id="6cu-3V-z3b"/>
                         <outlet property="RockOutlet" destination="XNF-Fq-7F2" id="P4a-28-SO7"/>
                         <outlet property="RockView" destination="dIj-6n-Nz1" id="8aQ-ll-6j7"/>
                         <outlet property="ScissorsOutlet" destination="0Rj-O4-Bpw" id="aS9-8y-NmS"/>
@@ -158,12 +166,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogG-41-qds">
-                                <rect key="frame" x="90" y="371" width="210" height="117"/>
+                                <rect key="frame" x="84" y="371" width="210" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Play!"/>
                                 <connections>
                                     <segue destination="tje-mk-Udh" kind="show" id="lYW-Hs-l9d"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Muu-BK-xdM">
+                                <rect key="frame" x="90" y="135" width="199" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjY-8S-htO">
+                                <rect key="frame" x="158" y="236" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="EnterAction:" destination="BYZ-38-t0r" eventType="touchDown" id="Yfq-mA-wLK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -173,6 +196,9 @@
                     <navigationItem key="navigationItem" title="Title Screen" largeTitleDisplayMode="always" style="editor" id="HgF-cP-nXc">
                         <barButtonItem key="backBarButtonItem" title="Back" id="XSy-bu-RQf"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textFieldOutlet" destination="Muu-BK-xdM" id="KeO-rG-p31"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

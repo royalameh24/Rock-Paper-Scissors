@@ -40,12 +40,16 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var ComputerView: UIImageView!
     @IBOutlet weak var SliderOutlet: UISlider!
     @IBOutlet weak var TotalInfoOutlet: UILabel!
+    @IBOutlet weak var RecordOutlet: UILabel!
     @IBOutlet weak var TableOutlet: UITableView!
     
     let dictionaryNames = ["Rock" : 1, "Paper" : 2, "Scissors" : 3]
     let dictionaryNums = [1: "Rock", 2 : "Paper", 3: "Scissors"]
     let lossDictionary = ["Rock" : "Paper", "Paper" : "Scissors", "Scissors" : "Rock"]
     var selection = 0
+    var winRate = 0.0
+    var totalGames = 0
+    var gamesMin = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,7 +111,6 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     @IBAction func tapOutlet(_ sender: Any) {
-        print("Hello")
         guard selection != 0 else {
             InformationOutlet.text = "No selection made, select before entering (triple tap)"
             clearSelection()
@@ -165,7 +168,17 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                 totalTies += 1
             }
         }
-        TotalInfoOutlet.text = "Total wins: \(totalWins) | Total losses: \(totalCWins) | Total ties \(totalTies)\nWin rate: \(Double(Int((Double(totalWins)/Double(totalWins + totalCWins + totalTies)) * 10000))/100.0)%"
+        winRate = Double(Int((Double(totalWins)/Double(totalWins + totalCWins + totalTies)) * 10000))/100.0
+        TotalInfoOutlet.text = "Total wins: \(totalWins) | Total losses: \(totalCWins) | Total ties \(totalTies)\nWin rate: \(winRate)%"
+        totalGames += 1
+        
+        if (totalGames > gamesMin && winRate > ViewController.highScorePercentage) {
+            ViewController.highScore.set(ViewController.currentName, forKey: "name")
+            ViewController.highScore.set(winRate, forKey: "percentage")
+        }
+        RecordOutlet.text = "World Record\n\(ViewController.highScoreName): \(ViewController.highScorePercentage)"
+        print(ViewController.highScoreName)
+        print(ViewController.highScorePercentage)
         
         
         TableOutlet.reloadData()
