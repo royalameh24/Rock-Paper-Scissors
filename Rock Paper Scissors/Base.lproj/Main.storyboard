@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game Screen-->
+        <!--Rock Paper Scissors-->
         <scene sceneID="mV6-nC-DpJ">
             <objects>
                 <viewController id="tje-mk-Udh" customClass="GameViewController" customModule="Rock_Paper_Scissors" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,25 +18,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kkk-2X-VK5">
-                                <rect key="frame" x="14" y="271" width="362" height="31"/>
+                                <rect key="frame" x="14" y="288" width="362" height="31"/>
                             </slider>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Uiy-UT-XvF">
-                                <rect key="frame" x="16" y="103" width="358" height="84.333333333333314"/>
+                                <rect key="frame" x="16" y="103" width="358" height="101.33333333333331"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rock" translatesAutoresizingMaskIntoConstraints="NO" id="dIj-6n-Nz1">
-                                        <rect key="frame" x="0.0" y="0.0" width="118" height="84.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="101.33333333333333"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paper" translatesAutoresizingMaskIntoConstraints="NO" id="a5B-cZ-rzd">
-                                        <rect key="frame" x="120" y="0.0" width="118" height="84.333333333333329"/>
+                                        <rect key="frame" x="120" y="0.0" width="118" height="101.33333333333333"/>
                                         <gestureRecognizers/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scissors2" translatesAutoresizingMaskIntoConstraints="NO" id="qps-U0-Ild">
-                                        <rect key="frame" x="240" y="0.0" width="118" height="84.333333333333329"/>
+                                        <rect key="frame" x="240" y="0.0" width="118" height="101.33333333333333"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b3N-bs-KQW">
-                                <rect key="frame" x="16" y="207.33333333333334" width="358" height="33.666666666666657"/>
+                                <rect key="frame" x="16" y="224.33333333333334" width="358" height="33.666666666666657"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-Fq-7F2">
                                         <rect key="frame" x="0.0" y="0.0" width="109.33333333333333" height="33.666666666666664"/>
@@ -71,53 +71,52 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u4n-hY-Uw4">
-                                <rect key="frame" x="75" y="311" width="240" height="128"/>
+                                <rect key="frame" x="75" y="328" width="240" height="128"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer selection: (selected)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1J-II-D9G">
+                                <rect key="frame" x="40" y="484.33333333333331" width="310" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer's Choice" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnO-HZ-qZ2">
-                                <rect key="frame" x="40" y="439" width="310" height="20.333333333333314"/>
+                                <rect key="frame" x="40" y="456" width="310" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Games total information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOb-RD-EfT">
-                                <rect key="frame" x="0.0" y="622" width="390" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win/loss | Your Move | Computer Move | Awareness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD9-q7-bvH">
+                                <rect key="frame" x="0.0" y="610.33333333333337" width="390" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Win/loss | Your Move | Computer Move | Awareness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD9-q7-bvH">
-                                <rect key="frame" x="3" y="593" width="387" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World Record:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GM-oP-KNA">
+                                <rect key="frame" x="16" y="514.66666666666663" width="358" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="World Record:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GM-oP-KNA">
-                                <rect key="frame" x="13" y="540" width="361" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="e1d-zu-sbC">
-                                <rect key="frame" x="54" y="676" width="306" height="246"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="e1d-zu-sbC">
+                                <rect key="frame" x="30" y="655.66666666666663" width="330" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="oSI-O2-Pmu"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="resultCell" id="gjV-xI-0w8">
-                                        <rect key="frame" x="0.0" y="50" width="306" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="330" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gjV-xI-0w8" id="E48-Wj-Brd">
-                                            <rect key="frame" x="0.0" y="0.0" width="306" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="330" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer selection: (selected)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1J-II-D9G">
-                                <rect key="frame" x="40" y="467.33333333333331" width="310" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games total information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOb-RD-EfT">
+                                <rect key="frame" x="16" y="570" width="358" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -128,14 +127,22 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Uiy-UT-XvF" firstAttribute="top" secondItem="vsk-yF-L7q" secondAttribute="top" constant="12" id="0ME-Ip-2TY"/>
+                            <constraint firstItem="vsk-yF-L7q" firstAttribute="trailing" secondItem="nOb-RD-EfT" secondAttribute="trailing" constant="16" id="1Jh-Vc-gXd"/>
                             <constraint firstItem="u4n-hY-Uw4" firstAttribute="top" secondItem="Kkk-2X-VK5" secondAttribute="bottom" constant="10" id="1V3-pa-xm2"/>
                             <constraint firstItem="v1J-II-D9G" firstAttribute="leading" secondItem="vsk-yF-L7q" secondAttribute="leading" constant="40" id="AXf-DZ-dG2"/>
+                            <constraint firstItem="VD9-q7-bvH" firstAttribute="leading" secondItem="vsk-yF-L7q" secondAttribute="leading" id="CBp-qM-lCA"/>
+                            <constraint firstItem="VD9-q7-bvH" firstAttribute="trailing" secondItem="vsk-yF-L7q" secondAttribute="trailing" id="E9J-dy-yGy"/>
                             <constraint firstItem="u4n-hY-Uw4" firstAttribute="centerX" secondItem="g1V-5a-ssQ" secondAttribute="centerX" id="F15-3e-nk4"/>
+                            <constraint firstItem="e1d-zu-sbC" firstAttribute="leading" secondItem="vsk-yF-L7q" secondAttribute="leading" constant="30" id="Fic-ln-La0"/>
+                            <constraint firstItem="VD9-q7-bvH" firstAttribute="top" secondItem="nOb-RD-EfT" secondAttribute="bottom" constant="20" id="JfL-Xm-wuV"/>
                             <constraint firstItem="u4n-hY-Uw4" firstAttribute="width" secondItem="g1V-5a-ssQ" secondAttribute="width" multiplier="0.615385" id="L5M-M8-kTn"/>
+                            <constraint firstItem="nOb-RD-EfT" firstAttribute="leading" secondItem="vsk-yF-L7q" secondAttribute="leading" constant="16" id="LXv-Kw-r9M"/>
+                            <constraint firstItem="3GM-oP-KNA" firstAttribute="leading" secondItem="vsk-yF-L7q" secondAttribute="leading" constant="16" id="M5I-JB-8Zd"/>
                             <constraint firstItem="v1J-II-D9G" firstAttribute="centerX" secondItem="g1V-5a-ssQ" secondAttribute="centerX" id="Mf6-W5-AWU"/>
                             <constraint firstItem="KnO-HZ-qZ2" firstAttribute="top" secondItem="u4n-hY-Uw4" secondAttribute="bottom" id="NP2-Rj-a8g"/>
                             <constraint firstAttribute="trailing" secondItem="b3N-bs-KQW" secondAttribute="trailing" constant="16" id="PVK-3G-cXX"/>
-                            <constraint firstItem="Uiy-UT-XvF" firstAttribute="height" secondItem="g1V-5a-ssQ" secondAttribute="height" multiplier="0.1" id="QHV-yG-fzb"/>
+                            <constraint firstItem="Uiy-UT-XvF" firstAttribute="height" secondItem="g1V-5a-ssQ" secondAttribute="height" multiplier="0.12" id="QHV-yG-fzb"/>
+                            <constraint firstItem="vsk-yF-L7q" firstAttribute="trailing" secondItem="e1d-zu-sbC" secondAttribute="trailing" constant="30" id="R6Y-J8-GFf"/>
                             <constraint firstItem="u4n-hY-Uw4" firstAttribute="height" secondItem="g1V-5a-ssQ" secondAttribute="height" multiplier="0.151659" id="TAg-sc-Ekn"/>
                             <constraint firstItem="KnO-HZ-qZ2" firstAttribute="leading" secondItem="vsk-yF-L7q" secondAttribute="leading" constant="40" id="a2k-FB-vML"/>
                             <constraint firstItem="vsk-yF-L7q" firstAttribute="trailing" secondItem="v1J-II-D9G" secondAttribute="trailing" constant="40" id="boQ-cb-8lO"/>
@@ -146,16 +153,19 @@
                             <constraint firstItem="vsk-yF-L7q" firstAttribute="trailing" secondItem="Kkk-2X-VK5" secondAttribute="trailing" constant="16" id="jxZ-ZB-baY"/>
                             <constraint firstItem="b3N-bs-KQW" firstAttribute="leading" secondItem="vsk-yF-L7q" secondAttribute="leading" constant="16" id="l9A-Tb-MXQ"/>
                             <constraint firstItem="vsk-yF-L7q" firstAttribute="trailing" secondItem="KnO-HZ-qZ2" secondAttribute="trailing" constant="40" id="o4O-OE-eVq"/>
+                            <constraint firstItem="vsk-yF-L7q" firstAttribute="trailing" secondItem="3GM-oP-KNA" secondAttribute="trailing" constant="16" id="oN3-yE-GWT"/>
+                            <constraint firstItem="nOb-RD-EfT" firstAttribute="top" secondItem="3GM-oP-KNA" secondAttribute="bottom" constant="35" id="oa8-m4-nEe"/>
                             <constraint firstAttribute="trailing" secondItem="Uiy-UT-XvF" secondAttribute="trailing" constant="16" id="qdc-ND-D1B"/>
                             <constraint firstItem="Kkk-2X-VK5" firstAttribute="height" secondItem="g1V-5a-ssQ" secondAttribute="height" multiplier="0.035545" id="rrq-Pu-pKc"/>
                             <constraint firstItem="v1J-II-D9G" firstAttribute="top" secondItem="KnO-HZ-qZ2" secondAttribute="bottom" constant="8" id="sNO-Yt-DLS"/>
+                            <constraint firstItem="3GM-oP-KNA" firstAttribute="top" secondItem="v1J-II-D9G" secondAttribute="bottom" constant="10" id="xgW-T7-q9H"/>
                             <constraint firstItem="Uiy-UT-XvF" firstAttribute="leading" secondItem="vsk-yF-L7q" secondAttribute="leading" constant="16" id="y1j-BA-fuU"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="m9F-s5-5zg" appends="YES" id="Sfh-zj-HlZ"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Game Screen" style="editor" id="4Zw-A3-cO5">
+                    <navigationItem key="navigationItem" title="Rock Paper Scissors" style="editor" id="4Zw-A3-cO5">
                         <barButtonItem key="backBarButtonItem" title="Back" id="aRD-1d-ZLL"/>
                     </navigationItem>
                     <connections>

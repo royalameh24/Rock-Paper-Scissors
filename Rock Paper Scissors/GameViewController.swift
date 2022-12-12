@@ -174,7 +174,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         TotalInfoOutlet.text = "Total wins: \(totalWins) | Total losses: \(totalCWins) | Total ties \(totalTies)\nWin rate: \(winRate)%"
         totalGames += 1
         
-        if totalGames > gamesMin && winRate > ViewController.highScore.double(forKey: "percentage") {
+        if totalGames > gamesMin && winRate >= ViewController.highScore.double(forKey: "percentage") {
             ViewController.highScore.set(ViewController.currentName, forKey: "name")
             ViewController.highScore.set(winRate, forKey: "percentage")
         }
