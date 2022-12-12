@@ -74,7 +74,13 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ScissorsView.layer.borderColor = UIColor.white.cgColor
         ScissorsView.layer.cornerRadius = CGFloat(radius)
         
-        RecordOutlet.text = "World Record\n\(ViewController.highScore.string(forKey: "name")!): \(ViewController.highScore.double(forKey: "percentage"))%"
+        if let temp = ViewController.highScore.string(forKey: "name") {
+            RecordOutlet.text = "World Record\n\(temp): \(ViewController.highScore.double(forKey: "percentage"))%"
+        }
+        else {
+            ViewController.highScore.set("Guest", forKey: "name")
+            ViewController.highScore.set(Double(0.0), forKey: "percentage")
+        }
         
     }
     
