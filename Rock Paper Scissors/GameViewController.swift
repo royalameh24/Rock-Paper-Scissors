@@ -74,6 +74,8 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ScissorsView.layer.borderColor = UIColor.white.cgColor
         ScissorsView.layer.cornerRadius = CGFloat(radius)
         
+        RecordOutlet.text = "World Record\n\(ViewController.highScore.string(forKey: "name")!): \(ViewController.highScore.double(forKey: "percentage"))%"
+        
     }
     
     @IBAction func RockAction(_ sender: UIButton) {
@@ -172,13 +174,13 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         TotalInfoOutlet.text = "Total wins: \(totalWins) | Total losses: \(totalCWins) | Total ties \(totalTies)\nWin rate: \(winRate)%"
         totalGames += 1
         
-        if (totalGames > gamesMin && winRate > ViewController.highScorePercentage) {
+        if totalGames > gamesMin && winRate > ViewController.highScore.double(forKey: "percentage") {
             ViewController.highScore.set(ViewController.currentName, forKey: "name")
             ViewController.highScore.set(winRate, forKey: "percentage")
         }
-        RecordOutlet.text = "World Record\n\(ViewController.highScoreName): \(ViewController.highScorePercentage)"
-        print(ViewController.highScoreName)
-        print(ViewController.highScorePercentage)
+        RecordOutlet.text = "World Record\n\(ViewController.highScore.string(forKey: "name")!): \(ViewController.highScore.double(forKey: "percentage"))%"
+        //print(ViewController.highScoreName)
+        //print(ViewController.highScorePercentage)
         
         
         TableOutlet.reloadData()

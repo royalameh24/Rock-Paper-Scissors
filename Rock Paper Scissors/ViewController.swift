@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             ViewController.highScoreName = name
         }
         else {
-            ViewController.highScore.set(ViewController.highScoreName, forKey: "name")
+            ViewController.highScoreName = "Guest"
         }
         ViewController.highScorePercentage = ViewController.highScore.double(forKey: "percentage")
     }
@@ -35,6 +35,10 @@ class ViewController: UIViewController {
         convertToStatic(name: name)
     }
     
+    @IBAction func ResetScore(_ sender: UIButton) {
+        ViewController.highScore.set("Guest", forKey: "name")
+        ViewController.highScore.set(Double(0.0), forKey: "percentage")
+    }
     
     func convertToStatic (name: String) {
         ViewController.currentName = name
